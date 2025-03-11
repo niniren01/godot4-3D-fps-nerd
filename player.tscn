@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://jpeo1lfy0ldy"]
+[gd_scene load_steps=5 format=3 uid="uid://jpeo1lfy0ldy"]
 
 [ext_resource type="Script" uid="uid://djri7v1omimi5" path="res://player.gd" id="1_1s6ni"]
+[ext_resource type="PackedScene" uid="uid://cfsrsf0wpn75" path="res://ui.tscn" id="2_onrkg"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u2c4f"]
 
@@ -9,11 +10,10 @@
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_1s6ni")
 
-[node name="Pivot" type="Node3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_u2c4f")
+skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -21,3 +21,5 @@ shape = SubResource("CapsuleShape3D_j0wt7")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29387, 0)
+
+[node name="UI" parent="." instance=ExtResource("2_onrkg")]
