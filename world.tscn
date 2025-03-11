@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dngyg1a7cap3v"]
+[gd_scene load_steps=12 format=3 uid="uid://dngyg1a7cap3v"]
 
 [ext_resource type="PackedScene" uid="uid://jpeo1lfy0ldy" path="res://player.tscn" id="1_m2wri"]
 [ext_resource type="Material" uid="uid://dc74h1xu0pux5" path="res://wall.tres" id="2_fj7yv"]
 [ext_resource type="Material" uid="uid://wb37v0bfvp6d" path="res://floor.tres" id="2_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://ksyqgq16vyp2" path="res://enemy.tscn" id="4_aqk2v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sk6r5"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -90,3 +91,6 @@ mesh = SubResource("BoxMesh_woxy8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4"]
 shape = SubResource("BoxShape3D_ppirm")
+
+[node name="Enemy" parent="." instance=ExtResource("4_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
